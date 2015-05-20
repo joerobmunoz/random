@@ -1,5 +1,8 @@
 'use strict';
 
+// NOTE:
+// This is a dynamic programming solution. There also exists a simple recursive solution to the problem.
+
 function Validator () {
 	this.validLC = ['a','b','c','d','e','f','g','h','i','j'];
 	this.valicUC = ['Z','N','L','Q','R'];
