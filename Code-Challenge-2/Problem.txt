@@ -1,0 +1,15 @@
+In JavaScript, write a function that checks for the validity of a string given the following rules:
+ 
+  1. There are 15 valid characters: the lower-case letters ‘a’ through ‘j’ 
+     and the uppercase letters ‘Z’, ‘N’, ‘L’, ‘Q’, and ‘R’.
+  2. Every valid lower-case letter by itself is valid, for example, ‘j’ is a valid string.
+  3. If ϴ is a valid string, then so is Zϴ.
+  4. If ϴ and τ are valid strings, then so are Nϴτ , Lϴτ , Qϴτ , and Rϴτ .
+  5. All other strings are invalid.
+ 
+The function should accept a parameter that consists of potential strings separated by whitespace 
+and it would return one line per potential strings, followed by ‘VALID’ if the string passes 
+the rules set above or ‘INVALID’ if it doesn't.
+
+
+Examples in "./JS-Problem/tests.js"
