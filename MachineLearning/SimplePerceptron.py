@@ -1,4 +1,4 @@
-def SimplePerception(training_set, recursion_limit, run=None, variable_coefficients=None):
+def SimplePerception(training_set, recursion_limit, run=0, variable_coefficients=None):
     """
     Input a training_set as a list of tuples (list of record values,
     classification value), a recursion_limit as an integer, variables as
@@ -59,4 +59,4 @@ def SimplePerception(training_set, recursion_limit, run=None, variable_coefficie
 # test_set = [([1, 2, 3], 0), ([2, 4, 5], 1), ([1, 2, 3], 0), ([3, 5, 6], 1)]
 test_set = [([1, 2, 3], 0), ([2, 4, 5], 1), ([1, 2, 3], 0), ([3, 5, 6], 1), ([0, 2, 6], 0)]
 
-SimplePerception(test_set, 3, 0)
+SimplePerception(test_set, 3)
