@@ -1,12 +1,26 @@
 // Main
 
-var koa = require('koa'),
-	router = require('koa-router');
-
-var app = koa();
+var app = require('koa')(),
+	router = require('koa-router')();
 
 // Routing
-app.use(router(app));
+router.get('/', index);
+router.get('/about', about);
+// Defined Routes
+router.get('/home', function*(next) {
+	switch(this.request.method) {
+		case 'GET':
+			var users = ['Ted', 'Rick', 'Steve'];
+			this.body = users;
+			break;
+		case 'POST':
+			this.body = 'Not yet implemented.';
+	}
+});
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 // Timestamp Logging
 app.use(function* timeStamper(next) {
@@ -19,12 +33,20 @@ app.use(function* timeStamper(next) {
 	console.log("Request length: " + difference + "ms");
 });
 
-//
+// Views
+function* index() {
+  this.body = "<h1>Hello! This is my home page!</h1>";
+}
 
-console.log('Server started...');
+function* about() {
+  this.body = "<h2>This is the ABOUT page.</h2>";
+}
+
 
 try {
- app.listen(3001);
+ app.listen(3002);
 } catch(e) {
-	console.log(e);
+	console.log("Error:\n" + e);
 }
+
+console.log('Server started...');
